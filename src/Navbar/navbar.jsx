@@ -10,22 +10,27 @@ function Navbar({ categories }) {
 
     // console.log(cartItems);
 
-    const addToCart = (product) => {
-        const existingCartItem = cartItems.find((item) => item.id === product.id);
 
-        if (existingCartItem) {
-            const updatedCartItems = cartItems.map((item) => {
-                if (item.id === product.id) {
-                    return { ...item, quantity: item.quantity + 1 };
-                }
-                return item;
-            });
-            setCartItems(updatedCartItems);
-        } else {
-            setCartItems([...cartItems, { ...product, quantity: 1 }]);
-        }
-    };
+    // Function to add a product to the cart
+    // const addToCart = (product) => {
+    //     // Find if the product is already in the cart
+    //     const existingCartItem = cartItems.find((item) => item.id === product.id);
 
+    //     if (existingCartItem) {
+    //         const updatedCartItems = cartItems.map((item) => {
+    //             if (item.id === product.id) {
+    //                 return { ...item, quantity: item.quantity + 1 };
+    //             }
+    //             return item;
+    //         });
+    //         setCartItems(updatedCartItems);
+    //     } else {
+    //         setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    //     }
+    // };
+
+
+    // Calculate the total number of items in the cart
     useEffect(() => {
         let totalCount = 0;
         for (let item of cartItems) {
