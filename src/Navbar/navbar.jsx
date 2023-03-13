@@ -58,12 +58,15 @@ function Navbar({ categories }) {
                 ))}
             </ul>
 
-            <div className="cart-icon">
-                <ShoppingBagIcon />
-                <span className="cart-count" onClick={() => window.location.href = "/checkout"}>
-                    <img src={cart} alt={"cart - icon"} />{totalCartItems}
-                </span>
-            </div>
+            <Link to="/checkout">
+                <div className="cart-icon">
+                    <ShoppingBagIcon />
+                    {/* <span className="cart-count" onClick={() => window.location.href = "/checkout"}> */}
+                    <span className="cart-count">
+                        <img src={cart} alt={"cart - icon"} />{totalCartItems}
+                    </span>
+                </div>
+            </Link>
         </nav>
     );
 }
