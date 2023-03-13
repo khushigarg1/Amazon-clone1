@@ -3,13 +3,14 @@ import './navbar.css';
 import { NavLink, Link } from 'react-router-dom';
 import { ReactComponent as ShoppingBagIcon } from '../assets/shopping-bag.svg';
 import { CartContext } from '../App';
+import logo from "./logo.png";
+import cart from "./cart.png";
 
 function Navbar({ categories }) {
     const { cartItems, setCartItems } = useContext(CartContext);
     const [totalCartItems, setTotalCartItems] = useState(0);
 
     // console.log(cartItems);
-
 
     // Function to add a product to the cart
     // const addToCart = (product) => {
@@ -30,7 +31,7 @@ function Navbar({ categories }) {
     // };
 
 
-    // Calculate the total number of items in the cart
+    //-------Calculate the total number of items in the cart
     useEffect(() => {
         let totalCount = 0;
         for (let item of cartItems) {
@@ -46,7 +47,7 @@ function Navbar({ categories }) {
             </div> */}
             <Link to="/">
                 <div className="logo">
-                    <img src="/logo.png" alt="Company Logo" />
+                    <img src={logo} alt="Company Logo" />
                 </div>
             </Link>
             <ul className="navbar-links">
@@ -60,7 +61,7 @@ function Navbar({ categories }) {
             <div className="cart-icon">
                 <ShoppingBagIcon />
                 <span className="cart-count" onClick={() => window.location.href = "/checkout"}>
-                    {totalCartItems}
+                    <img src={cart} alt={"cart - icon"} />{totalCartItems}
                 </span>
             </div>
         </nav>
