@@ -25,7 +25,7 @@ function CheckoutPage() {
             price += item.price * item.quantity;
         });
         setTotalPrice(price);
-        if (price > 2000) {
+        if (price > 24.28) {
             setDiscountedPrice(price * 0.9);
         } else {
             setDiscountedPrice(price);
