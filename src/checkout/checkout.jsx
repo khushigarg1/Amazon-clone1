@@ -162,9 +162,12 @@ function CheckoutPage() {
                                         {/* Add a discount if the total price is greater than $24.38 i.e. 2000rupee */}
                                         {totalPrice > 24.38 && (
                                             <p className='total'>
-                                                Discount(10% off): <span>${discountedPrice}</span>
+                                                Discount(10% off): <span>${totalPrice - discountedPrice}</span>
                                             </p>
                                         )}
+                                        <p>
+                                            Final Price: <span>${discountedPrice}</span>
+                                        </p>
                                     </div>
                                     <Link className='checkout' onClick={handleCheckout}>Checkout</Link>
                                 </React.Fragment>
